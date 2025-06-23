@@ -1,0 +1,6 @@
+data/
+layers/__pycache__/
+loss/__pycache__/
+models/__pycache__/
+optimizers/__pycache__/
+utils/__pycache__/
