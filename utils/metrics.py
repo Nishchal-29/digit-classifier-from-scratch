@@ -1,7 +1,8 @@
 import numpy as np
 
-def compute_accuracy(Y_hat, Y_true):
-    pred_labels = np.argmax(Y_hat, axis=0)
-    true_labels = np.argmax(Y_true, axis=0)
-    accuracy = np.mean(pred_labels == true_labels)
+def compute_accuracy(logits, labels):
+    # logits shape: (num_classes, batch_size)
+    # labels shape: (batch_size,)
+    preds = np.argmax(logits, axis=0)
+    accuracy = np.mean(preds == labels)
     return accuracy
