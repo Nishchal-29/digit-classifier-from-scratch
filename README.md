@@ -4,14 +4,14 @@ This project demonstrates a complete digit classification system built **entirel
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 The goal of this project is to understand the inner workings of neural networks by implementing every component from the ground up. This includes:
 
 - Custom dense layers
 - Activation functions (ReLU, LeakyReLU, Softmax)
 - Batch normalization
-- Multiple optimizers (SGD, SGD with momentum, RMSprop, Adam)
+- Multiple optimizers (SGD, RMSprop, Adam)
 - Cross-entropy loss
 - Forward and backward propagation
 - Accuracy tracking and prediction visualization
@@ -20,31 +20,29 @@ All components are modularized into separate files to ensure clean architecture 
 
 ---
 
-## 🧠 Model Architecture
+## Model Architecture
 
 The model is a multi-layer perceptron with the following architecture:
 
 ```
-Input (784) → Linear(128) → BatchNorm → ReLU
-           → Linear(64) → ReLU
+Input (784) → Linear(64) → BatchNorm → ReLU
+           → Linear(32) → ReLU
            → Linear(10) → Softmax
 ```
 
-Trained using the **Adam optimizer** and **cross-entropy loss**.
-
 ---
 
-## 🗂️ Project Structure
+## Project Structure
 
 ```
-neural_net_from_scratch/
+digit-classifier-from-scratch/
 │
 ├── main.py                     # Main script for training and evaluation
 │
 ├── layers/
 │   ├── dense.py                # Linear (fully connected) layer
 │   ├── activation.py           # ReLU, LeakyReLU, Softmax
-│   └── norm.py                 # BatchNorm1d
+│   └── norm.py                 # BatchNorm
 │
 ├── loss/
 │   └── loss.py                 # Cross-entropy loss and gradient
@@ -64,7 +62,7 @@ neural_net_from_scratch/
 
 ---
 
-## 🔍 Key Highlights
+## Key Highlights
 
 - Every function and class was written from scratch using **NumPy**.
 - The `NeuralNetwork` class dynamically chains all layers and performs full forward and backward propagation.
@@ -73,22 +71,13 @@ neural_net_from_scratch/
 
 ---
 
-## 📊 Results
+## Results
 
 - **Training Accuracy**: 98.26%
 - **Testing Accuracy**: 97.2%
 - Dataset: [MNIST handwritten digits](http://yann.lecun.com/exdb/mnist/)
 
 ---
-
-## 🧪 Run It Yourself
-
-### Requirements
-
-- Python 3.7+
-- NumPy
-- Matplotlib
-- scikit-learn
 
 ### To Train and Evaluate:
 
@@ -99,13 +88,3 @@ python main.py
 This will automatically load the dataset, train the model, and display predictions visually at the end.
 
 ---
-
-## ✅ Why This Project Matters
-
-This project is not just about high accuracy—it’s about **learning**. By implementing every component manually, it bridges the gap between theory and practice in deep learning, helping you understand exactly how each part contributes to the model’s performance.
-
----
-
-## License
-
-This project is open for learning and academic use. Contributions and feedback are welcome.
