@@ -15,6 +15,9 @@ class BatchNorm:
         self.training = True
         self.cache_input = None
         
+        self.dgamma = np.zeros((dim, 1))
+        self.dbeta = np.zeros((dim, 1))
+        
     def forward(self, X):
         self.cache_input = X
         if self.training:
@@ -46,10 +49,10 @@ class BatchNorm:
         return d_input
     
     def params(self):
-        return {'gamma': self.gamma, 'beta': self.beta}
-    
+        return {"W": self.gamma, "b": self.beta}
+
     def grads(self):
-        return {'dgamma': self.dgamma, 'dbeta': self.dbeta}
+        return {"dW": self.dgamma, "db": self.dbeta}
     
     def train(self):
         self.training = True

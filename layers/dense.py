@@ -21,7 +21,7 @@ class Linear:
         return dA_prev
     
     def params(self):
-        return {'W': self.W, 'b': self.b}
-    
+        return {"W": self.W, "b": self.b}
+
     def grads(self):
-        return {'dW': self.dW, 'db': self.db}
+        return {"dW": self.dW, "db": self.db}
